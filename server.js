@@ -1,9 +1,3 @@
-// PARTHA - FEEL FREE TO RE-ORGANIZE ALL OF THIS IF YOU DEEM NECESSARY
-
-
-
-
-
 // *** Dependencies
 // =============================================================
 var express = require("express");
@@ -18,6 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
 // Register a Handlebars view engine
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -32,8 +27,9 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 require("./app/routes/donor-api-routes")(app);
-// require("./routes/??????????????????????????")(app);
-// require("./routes/??????????????????????????")(app);
+require("./app/routes/inst-api-routes")(app);
+// require("./app/routes/html-routes")(app);
+// DO WE NEED THIS HTML-ROUTES FILE OR IS THIS HANDLED IN THE API-ROUTES?????
 
 
 // Syncing our sequelize models and then starting our Express app

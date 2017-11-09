@@ -1,6 +1,7 @@
 // NEEDS UPDATING!!!
 
 // UI ENDPOINTS???
+    //      /                                --> login page
     //      /donor/:donor_id                 --> donation history
     //      /donor/:donor_id/profile         --> display profile info
     //      /inst/:inst_id                   --> current need and received this mo
@@ -41,6 +42,10 @@ module.exports = function(app) {
                 res.render('donor', {donors: donors});
             });
     });
+
+    
+
+
     // app.get("/api/donors", function(req, res) {
     //     // Handlebars requires an object to be sent to the handlebars file.
     //     // NEED TO GRAB THE DONATION HISTORY AS AN OBJECT AND SEND TO DONOR.HBR

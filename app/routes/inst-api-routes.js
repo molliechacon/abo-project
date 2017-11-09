@@ -21,10 +21,18 @@
 
     
 // Requiring our models
-var db = require("../models/insts");
+var Inst = require("../models/insts");
 
 module.exports = function(app) {
-    
+    app.get("/insts", function(req, res) {
+        // Handlebars requires an object to be sent to the handlebars file.
+        // NEED TO GRAB THE DONATION HISTORY AS AN OBJECT AND SEND TO DONOR.HBR
+        Inst.findAll({})
+            .then(function(insts) {
+                console.log('insts', insts);
+                res.render('inst', {insts: insts});
+            });
+    });
     
 
     

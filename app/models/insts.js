@@ -11,6 +11,11 @@ var sequelize = require("../config/connection");
 
 // Creates a "Inst" model that matches up with DB
 var Inst = sequelize.define("inst", {
+  inst_id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
   name: {
     type: Sequelize.STRING
   },
