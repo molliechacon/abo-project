@@ -9,11 +9,11 @@ VALUES ('Sam', 'sam@somewhere.com', true, '1010 Welton St', '80204', 'AB-', '303
 
 
 
-INSERT INTO insts (name, street_address, zip_code, phone, email, hours, need_blood_type, need_amount, need_description, request_message) 
-VALUES ('Swedish Medical Center', '5555 Hampden Ave', '80113', '303.788.7888', 'swedish@swedish.com', 'Monday-Friday, 8am-5pm', 'O-', 17, 'smc desc', 'smc message');
+INSERT INTO insts (name, street_address, zip_code, phone, email, hours, need_blood_type, need_amount) 
+VALUES ('Swedish', '5555 Hampden Ave', '80113', '303.788.7888', 'swedish@swedish.com', 'Monday-Friday, 8am-5pm', 'O-', 17);
 
-INSERT INTO insts (name, street_address, zip_code, phone, email, hours, need_blood_type, need_amount, need_description, request_message) 
-VALUES ('St. Joseph"s Hospitadonorsl', '1515 S. Colorado Blvd', '80209', '303.848.4444', 'national@nj.com', 'Monday-Friday, 8am-3pm', 'AB-', 9, 'stj desc', 'stj message');
+INSERT INTO insts (name, street_address, zip_code, phone, email, hours, need_blood_type, need_amount) 
+VALUES ('NationalJewish', '1515 S. Colorado Blvd', '80209', '303.848.4444', 'national@nj.com', 'Monday-Friday, 8am-3pm', 'AB-', 9);
 
-INSERT INTO insts (name, street_address, zip_code, phone, email, hours, need_blood_type, need_amount, need_description, request_message) 
-VALUES ('Porter Adventist Hospital', '3500 S Downing', '80120', '303.788.7888', 'swedish@swedish.com', 'Monday-Friday, 7am-7pm', 'A', 12, 'port desc', 'port message');
+INSERT INTO insts (name, street_address, zip_code, phone, email, hours, need_blood_type, need_amount) 
+VALUES ('Porter', '3500 S Downing', '80120', '303.788.7888', 'swedish@swedish.com', 'Monday-Friday, 7am-7pm', 'A', 12);

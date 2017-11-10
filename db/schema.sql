@@ -40,8 +40,8 @@ CREATE TABLE insts (
   hours VARCHAR(255) NOT NULL,
   need_blood_type VARCHAR(3),
   need_amount INT,
-  need_description VARCHAR(255),
-  request_message VARCHAR(255),
+  need_description VARCHAR(255) DEFAULT 'None',
+  request_message VARCHAR(255) DEFAULT 'None',
   PRIMARY KEY (inst_id)
 );
 
