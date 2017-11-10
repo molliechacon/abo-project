@@ -82,10 +82,10 @@
                             <p><strong>Email: </strong>             {{inst.email}}</p>
                             <p><strong>Hours: </strong>             {{inst.hours}}</p>
                             
-                            <button type="submit" class="btn btn-primary" id="update-inst-profile" data-toggle="modal" data-target="#myModal">Update</button>
+                            <button type="submit" class="btn btn-primary" id="update-inst-profile" data-toggle="modal" data-target="#myModal2">Update</button>
 
                             <!-- Modal -->
-                            <div id="myModal" class="modal fade" role="dialog">
+                            <div id="myModal2" class="modal fade" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -163,7 +163,15 @@
             </div>
         </div>
         <div class="col-sm-4">
-            graphic with how far til you reach your goal
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title" id="goal-text">Progress towards your goal!</h4>  
+                </div>
+                <div class="panel-body">
+                    {{!-- make this functional in future improvements --}}
+                    <img class="img-responsive" id="thermometer" src="/images/Professional-thermometer-designs.png" alt="Thermometer showing path towards goal">
+                </div>
+             </div>
         </div>
     </div>
 </div>

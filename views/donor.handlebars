@@ -8,7 +8,7 @@
         <div class="panel-body" id="donor-recent-panel">
           <h3>Your most recent donation was on: </h3>
             <p id="donation-date">{{donor.donation_date}}</p>
-            <br>
+            <hr>
             <h4>Have you donned your superhero cape and given blood again since then? If so, click the link below to log a new donation!</h4>
             <br>
               <button type="submit" class="btn btn-primary" id="log-donation" data-toggle="modal" data-target="#myModal">Log a Donation</button>
@@ -36,7 +36,7 @@
                                 <input type="text" class="form-control" id="input-donation-date" placeholder="Date (YYYY-MM-DD format)">
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="input-donation-inst" placeholder="Institution Name">
+                                <input type="text" class="form-control" id="input-donation-location" placeholder="Institution Name">
                               </div>
                             </form>
                           </div>
@@ -70,10 +70,10 @@
           <p><strong>Accept Email?:</strong>   {{donor.accept_email}}</p>
           <p><strong>Accept SMS?:</strong>     {{donor.accept_sms}}</p>
 
-          <button type="submit" class="btn btn-primary" id="update-donor-profile" data-toggle="modal" data-target="#myModal">Update</button>
+          <button type="submit" class="btn btn-primary" id="update-donor-profile" data-toggle="modal" data-target="#myModal2">Update</button>
 
           <!-- Modal -->
-          <div id="myModal" class="modal fade" role="dialog">
+          <div id="myModal2" class="modal fade" role="dialog">
             <div class="modal-dialog">
               <!-- Modal content-->
                 <div class="modal-content">

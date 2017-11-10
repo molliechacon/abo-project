@@ -5,8 +5,9 @@ body {
 
 #navtop {
     border-top: 5px solid #e9ce99;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
+    /* height: 60px; */
 }
 
 .navbar-brand {
@@ -57,5 +58,39 @@ body {
 .inst-tile {
     height: 300px;
     margin-bottom: 40px;
+}
+
+#thermometer {
+    width: 225px;
+    margin-left: 50px;
+}
+
+#goal-text {
+    font-family: 'Spectral SC', serif;
+    text-align: center;
+}
+
+a:link {
+    color: white; 
+    background-color: transparent; 
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #e9ce99;
+    background-color: transparent;
+    text-decoration: underline;
 }
 
