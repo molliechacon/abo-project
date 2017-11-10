@@ -1,60 +1,58 @@
-<div class="row">
-    <div class="col-sm-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Donation History</h3>       
+<div class="container">
+  <div class="row">
+      <div class="col-sm-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Donation History</h3>       
+            </div>
+            <div class="panel-body">
+                <h4>Your last donation was on: </h4>
+                  <p>{{donor.donation_date}}</p>
+              {{!-- <button type="submit" class="btn btn-primary" id="donation-history">View last 10</button> --}}
+            </div>
           </div>
-          <div class="panel-body">
-              <h4>Your last donation was on: </h4>
-                {{!-- insert last donation date here!! --}}
-                {{!-- need to create models for sub tables --}}
-                <p>{{}}</p>
-
-            <button type="submit" class="btn btn-primary" id="donation-history">View last 10</button>
+      </div>
+      <div class="col-sm-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">My Profile</h3>       
+            </div>
+            <div class="panel-body">
+                
+              <button type="submit" class="btn btn-primary" id="update-profile">Update</button>
+            </div>
           </div>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">My Profile</h3>       
+      </div>
+      <div class="col-sm-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Log a Donation</h3>       
+            </div>
+            <div class="panel-body">
+                
+              <button type="submit" class="btn btn-primary" id="log-donation">Submit</button>
+            </div>
           </div>
-          <div class="panel-body">
-              
-            <button type="submit" class="btn btn-primary" id="update-profile">Update</button>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Find a donation Center</h3>       
+            </div>
+            <div class="panel-body">
+                form group to search inst's goes here
+                
+              <button type="submit" class="btn btn-primary" id="find-donation-center">Submit</button>
+            </div>
           </div>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Log a Donation</h3>       
-          </div>
-          <div class="panel-body">
-              
-            <button type="submit" class="btn btn-primary" id="log-donation">Submit</button>
-          </div>
-        </div>
-    </div>
+      </div>
+      <div class="col-sm-8">
+          googlemap!!
+      </div>
+  </div>
 </div>
-<div class="row">
-    <div class="col-sm-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Find a donation Center</h3>       
-          </div>
-          <div class="panel-body">
-              form group to search inst's goes here
-              
-            <button type="submit" class="btn btn-primary" id="find-donation-center">Submit</button>
-          </div>
-        </div>
-    </div>
-    <div class="col-sm-8">
-        googlemap!!
-    </div>
-</div>
-
 
 {{#each donors}}
     <p>{{dataValues.nick_name}}</p>
