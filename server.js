@@ -19,7 +19,7 @@ app.set("view engine", "handlebars");
 
 
 // Static directory
-app.use(express.static(path.join(__dirname, "/app/public")));
+app.use(express.static("app/public"));
 
 
 // Routes
