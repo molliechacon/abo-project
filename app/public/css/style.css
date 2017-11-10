@@ -34,3 +34,17 @@ body {
 .panel {
     border-color:#a30705 !important;
 }
+
+#submit-profile-update {
+    color: white;
+}
+
+#update-profile {
+    width: 120px;
+}
+
+.donor-tile {
+    height: 350px;
+    margin-bottom: 40px;
+}
+

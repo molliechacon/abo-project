@@ -1,59 +1,149 @@
 <div class="container">
   <div class="row">
-      <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">Donation History</h3>       
-            </div>
-            <div class="panel-body">
-                <h4>Your last donation was on: </h4>
-                  <p>{{donor.donation_date}}</p>
-              {{!-- <button type="submit" class="btn btn-primary" id="donation-history">View last 10</button> --}}
+    <div class="col-sm-6">
+      <div class="panel panel-primary donor-tile">
+        <div class="panel-heading">
+          <h3 class="panel-title">Most Recent Activity</h3>       
+        </div>
+        <div class="panel-body" id="donor-recent-panel">
+          <h3>Your most recent donation was on: </h3>
+            <p>{{donor.donation_date}}</p>
+            <br>
+            <h4>Have you donned your superhero cape and given blood again since then? If so, click the link below to log a new donation!</h4>
+            <br>
+              <button type="submit" class="btn btn-primary" id="log-donation">Log a Donation</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="panel panel-primary donor-tile">
+        <div class="panel-heading">
+          <h3 class="panel-title">Your Profile</h3>       
+        </div>
+        <div class="panel-body">
+          <p><strong>User Name:</strong>       {{donor.nick_name}}</p>
+          <p><strong>Email:</strong>           {{donor.email}}</p>        
+          <p><strong>Street Address:</strong>  {{donor.street_address}}</p>
+          <p><strong>Zip Code:</strong>        {{donor.zip_code}}</p>
+          <p><strong>Blood Type:</strong>      {{donor.blood_type}}</p>
+          <p><strong>Phone #:</strong>         {{donor.phone}}</p>
+          <p><strong>Accept Email?:</strong>   {{donor.accept_email}}</p>
+          <p><strong>Accept SMS?:</strong>     {{donor.accept_sms}}</p>
+
+          <button type="submit" class="btn btn-primary" id="update-profile" data-toggle="modal" data-target="#myModal">Update</button>
+
+          <!-- Modal -->
+          <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Update Profile</h4>
+                      <h5>If any of the current information is not correct, please update here.</h5>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <h3> Current</h3>
+                        <p><strong>User Name:</strong>       {{donor.nick_name}}</p>
+                        <br>
+                        <p><strong>Email:</strong>           {{donor.email}}</p>  
+                        <br>      
+                        <p><strong>Street Address:</strong>  {{donor.street_address}}</p>
+                        <br>
+                        <p><strong>Zip Code:</strong>        {{donor.zip_code}}</p>
+                        <br>
+                        <p><strong>Blood Type:</strong>      {{donor.blood_type}}</p>
+                        <br>
+                        <p><strong>Phone #:</strong>         {{donor.phone}}</p>
+                        <br>
+                        <p><strong>Accept Email?:</strong>   {{donor.accept_email}}</p>
+                        <br>
+                        <p><strong>Accept SMS?:</strong>     {{donor.accept_sms}}</p>
+                      </div>
+                      <div class="col-sm-6">
+                        <h3>Update</h3>
+                        <form>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="input-nickname" placeholder="User Name">
+                          </div>
+                          <div class="form-group">
+                            <input type="email" class="form-control" id="input-email" placeholder="Email">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="input-address" placeholder="Street Address">
+                          </div>
+                          <div class="form-group">
+                            <input type="zip" class="form-control" id="input-zip" placeholder="Zip Code">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="input-type" placeholder="Blood Type (not required)">
+                          </div>
+                          <div class="form-group">                           
+                            <input type="phone" class="form-control" id="input-phone" placeholder="Phone">
+                          </div>
+                          <div class="radio">
+                            <label class="radio-inline">
+                              <input type="radio" name="inlineRadioOptions1" id="accept-email-true" value="option1"> Yes
+                            </label>
+                            <label class="radio-inline">
+                              <input type="radio" name="inlineRadioOptions1" id="accept-email-false" value="option2"> No
+                            </label>
+                          </div>
+                          <br>
+                          <div class="radio">
+                             <label class="radio-inline">
+                              <input type="radio" name="inlineRadioOptions2" id="accept-sms-true" value="option1"> Yes
+                            </label>
+                            <label class="radio-inline">
+                              <input type="radio" name="inlineRadioOptions2" id="accept-sms-false" value="option2"> No
+                            </label>
+                            <br>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="text-center">
+                          <button type="submit" id="submit-profile-update" class="btn btn-default btn-block">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
           </div>
+        </div>
       </div>
-      <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">My Profile</h3>       
-            </div>
-            <div class="panel-body">
-                
-              <button type="submit" class="btn btn-primary" id="update-profile">Update</button>
-            </div>
-          </div>
+    </div>
+    {{!-- <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Log a Donation</h3>       
+        </div>
+        <div class="panel-body">      
+          <button type="submit" class="btn btn-primary" id="log-donation">Submit</button>
+        </div>
       </div>
-      <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">Log a Donation</h3>       
-            </div>
-            <div class="panel-body">
-                
-              <button type="submit" class="btn btn-primary" id="log-donation">Submit</button>
-            </div>
-          </div>
-      </div>
+    </div> --}}
   </div>
   <div class="row">
-      <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">Find a donation Center</h3>       
-            </div>
-            <div class="panel-body">
-                form group to search inst's goes here
-                
-              <button type="submit" class="btn btn-primary" id="find-donation-center">Submit</button>
-            </div>
-          </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Find a Donation Center</h3>       
+        </div>
+        <div class="panel-body">
+             form group to search inst's goes here
+          <button type="submit" class="btn btn-primary" id="find-donation-center">Submit</button>
+        </div>
       </div>
-      <div class="col-sm-8">
+    </div>
+    <div class="col-sm-8">
           googlemap!!
-      </div>
+    </div>
   </div>
 </div>
-
-{{#each donors}}
-    <p>{{dataValues.nick_name}}</p>
-{{/each}}

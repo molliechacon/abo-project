@@ -44,7 +44,6 @@ module.exports = function(app) {
     });
 
     app.get("/donors/:nick_name", function(req, res) {
-        console.log(req.params);
         Donor.findOne({
             where: {
                 nick_name: req.params.nick_name

@@ -19,6 +19,9 @@ var Donor = sequelize.define("donor", {
   email: {
     type: Sequelize.STRING
   },
+  accept_email: {
+    type: Sequelize.BOOLEAN
+  },
   street_address: {
     type: Sequelize.STRING
   },
