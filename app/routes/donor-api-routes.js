@@ -49,31 +49,23 @@ module.exports = function(app) {
                 nick_name: req.params.nick_name
             }
         }).then(function(aDonor) {
-                res.render("donor", { donor: aDonor } )
+                res.render("donor", { donor: aDonor })
             })
     });    
 
+    app.put("/donors/:nick_name", function(req, res) {
+        Donor.update({
+            donation_date: req.body.donation_date,
+            institution_name: req.body.institution_name
+        }, {
+            where: {
+                nick_name: req.body.nick_name
+            }
+        }).then(function(update) {
+            // error catch??
 
-    // app.get("/api/donors", function(req, res) {
-    //     // Handlebars requires an object to be sent to the handlebars file.
-    //     // NEED TO GRAB THE DONATION HISTORY AS AN OBJECT AND SEND TO DONOR.HBR
-    //     res.json(???????????????);
-    // });
+            alert("Your donation was logged!")
+        });
+    });
 
-    // app.post("/api/donors", function(req, res) {
-    //     // CODE FOR POSTING A NEW DONATION GOES HERE
-    //     res.render("donor", ???????????????);
-    // });
-    
-    // app.put("/api/donors/:donor_id", function(req, res) {
-    //     // CODE FOR UPDATING USER PROFILE GOES HERE
-    
-    //     res.render("donor"????, ????????????????);
-    // });
-
-    // app.delete("/api/donors/:id", function(req, res) {
-    //     // CODE FOR DELETING USER PROFILE GOES HERE
-        
-    //     res.render("donor"????, ????????????????);
-    // });
 }

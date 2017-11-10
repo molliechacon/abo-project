@@ -3,16 +3,55 @@
     <div class="col-sm-6">
       <div class="panel panel-primary donor-tile">
         <div class="panel-heading">
-          <h3 class="panel-title">Most Recent Activity</h3>       
+          <h3 class="panel-title">Activity</h3>       
         </div>
         <div class="panel-body" id="donor-recent-panel">
           <h3>Your most recent donation was on: </h3>
-            <p>{{donor.donation_date}}</p>
+            <p id="donation-date">{{donor.donation_date}}</p>
             <br>
             <h4>Have you donned your superhero cape and given blood again since then? If so, click the link below to log a new donation!</h4>
             <br>
-              <button type="submit" class="btn btn-primary" id="log-donation">Log a Donation</button>
+              <button type="submit" class="btn btn-primary" id="log-donation" data-toggle="modal" data-target="#myModal">Log a Donation</button>
 
+               <!-- Modal -->
+              <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Log Donation</h4>
+                          <h5>Please list your most recent donation here</h5>
+                      </div>
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <p><strong>Donation Date:</strong></p>
+                            <br>
+                            <p><strong>Institution Name:</strong></p>  
+                          </div>
+                          <div class="col-sm-9">
+                            <form>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="input-donation-date" placeholder="Date (YYYY-MM-DD format)">
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="input-donation-inst" placeholder="Institution Name">
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <div class="text-center">
+                              <button type="submit" id="submit-donation-log" class="btn btn-default btn-block modal-submit">Submit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
         </div>
       </div>
     </div>
@@ -31,7 +70,7 @@
           <p><strong>Accept Email?:</strong>   {{donor.accept_email}}</p>
           <p><strong>Accept SMS?:</strong>     {{donor.accept_sms}}</p>
 
-          <button type="submit" class="btn btn-primary" id="update-profile" data-toggle="modal" data-target="#myModal">Update</button>
+          <button type="submit" class="btn btn-primary" id="update-donor-profile" data-toggle="modal" data-target="#myModal">Update</button>
 
           <!-- Modal -->
           <div id="myModal" class="modal fade" role="dialog">
@@ -108,7 +147,7 @@
                     <div class="row">
                       <div class="col-sm-12">
                         <div class="text-center">
-                          <button type="submit" id="submit-profile-update" class="btn btn-default btn-block">Submit</button>
+                          <button type="submit" id="submit-donor-profile" class="btn btn-default btn-block modal-submit">Submit</button>
                         </div>
                       </div>
                     </div>
@@ -119,16 +158,6 @@
         </div>
       </div>
     </div>
-    {{!-- <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Log a Donation</h3>       
-        </div>
-        <div class="panel-body">      
-          <button type="submit" class="btn btn-primary" id="log-donation">Submit</button>
-        </div>
-      </div>
-    </div> --}}
   </div>
   <div class="row">
     <div class="col-sm-4">

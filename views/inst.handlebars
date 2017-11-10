@@ -2,14 +2,149 @@
     <div class="row">
         <div class="col-sm-8">
             <div class="row">
-                <div class="col-sm-12">
-                    <div class="panel panel-primary">
+                <div class="col-sm-5">
+                    <div class="panel panel-primary inst-tile">
                         <div class="panel-heading">
                             <h3 class="panel-title">Current Needs</h3>  
                         </div>
                         <div class="panel-body">
+                            <p><strong>Blood Type: </strong>{{inst.need_blood_type}}</p>
+                            <p><strong>Amount: </strong>{{inst.need_amount}}</p>
+                            <p><strong>Description: </strong>{{inst.need_description}}</p>
+                            {{!-- <p><strong>Message: </strong>{{inst.request_message}}</p> --}}
 
-                            <button type="submit" class="btn btn-primary" id="update-current-need">Update</button>
+                            <button type="submit" class="btn btn-primary" id="update-current-need" data-toggle="modal" data-target="#myModal">Update</button>
+
+                            <!-- Modal -->
+                            <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Update Current Need</h4>
+                                            <h5>If any of the current information is not correct, please update here.</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <h3> Current</h3>
+                                                    <p><strong>Blood Type: </strong>    {{inst.need_blood_type}}</p>
+                                                    <br>
+                                                    <p><strong>Amount: </strong>        {{inst.need_amount}}</p>  
+                                                    <br>      
+                                                    <p><strong>Description: </strong>   {{inst.need_description}}</p>
+                                                    {{!-- <br>
+                                                    <p><strong>Message: </strong>       {{inst.request_message}}</p> --}}
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <h3>Update</h3>
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="inst-need-type" placeholder="Type Needed">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="email" class="form-control" id="inst-need-amount" placeholder="Amount Needed">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="inst-need-desc" placeholder="Description (Optional)">
+                                                        </div>
+                                                        {{!-- <div class="form-group">
+                                                            <input type="zip" class="form-control" id="inst-req-message" placeholder="Request Message">
+                                                        </div> --}}
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="text-center">
+                                                    <button type="submit" class="btn btn-default btn-block modal-submit" id="submit-need-update">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="panel panel-primary inst-tile">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Profile</h3>  
+                        </div>
+                        <div class="panel-body">
+                            <p><strong>Name: </strong>              {{inst.name}}</p>
+                            <p><strong>Street Address: </strong>    {{inst.street_address}}</p>
+                            <p><strong>Zip: </strong>               {{inst.zip_code}}</p>
+                            <p><strong>Phone: </strong>             {{inst.phone}}</p>
+                            <p><strong>Email: </strong>             {{inst.email}}</p>
+                            <p><strong>Hours: </strong>             {{inst.hours}}</p>
+                            
+                            <button type="submit" class="btn btn-primary" id="update-inst-profile" data-toggle="modal" data-target="#myModal">Update</button>
+
+                            <!-- Modal -->
+                            <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Update Profile</h4>
+                                            <h5>If any of the current information is not correct, please update here.</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <h3> Current</h3>
+                                                    <p><strong>Institution Name: </strong>          {{inst.name}}</p>
+                                                    <br>
+                                                    <p><strong>Street Address: </strong>            {{inst.street_address}}</p>  
+                                                    <br>      
+                                                    <p><strong>Zip: </strong>                       {{inst.zip_code}}</p>
+                                                    <br>
+                                                    <p><strong>Phone #: </strong>                   {{inst.phone}}</p>
+                                                    <br>
+                                                    <p><strong>Email: </strong>                     {{inst.email}}</p>
+                                                    <br>
+                                                    <p><strong>Hours: </strong>                     {{inst.hours}}</p>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <h3>Update</h3>
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="inst-name" placeholder="Institution Name">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="email" class="form-control" id="inst-address" placeholder="Street Address">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="inst-zip" placeholder="Zip Code">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="zip" class="form-control" id="inst-phone" placeholder="Phone">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="inst-email" placeholder="Email">
+                                                        </div>
+                                                        <div class="form-group">                           
+                                                            <input type="phone" class="form-control" id="inst-hours" placeholder="Hours">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="text-center">
+                                                    <button type="submit" class="btn btn-default btn-block modal-submit" id="submit-inst-profile">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -21,7 +156,6 @@
                             <h3 class="panel-title">Request Donations</h3>       
                         </div>
                         <div class="panel-body">
-
                             <button type="submit" class="btn btn-primary" id="request-donations">Request</button>
                         </div>
                     </div>
@@ -33,8 +167,3 @@
         </div>
     </div>
 </div>
-
-
-{{#each insts}}
-    <p>{{dataValues.name}}</p>
-{{/each}}

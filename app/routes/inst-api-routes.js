@@ -33,6 +33,16 @@ module.exports = function(app) {
                 res.render('inst', {insts: insts});
             });
     });
+
+    app.get("/insts/:name", function(req, res) {
+        Inst.findOne({
+            where: {
+                name: req.params.name
+            }
+        }).then(function(anInst) {
+            res.render("inst", { inst: anInst })
+        })
+    });
     
 
     
