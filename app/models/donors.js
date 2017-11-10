@@ -30,6 +30,15 @@ var Donor = sequelize.define("donor", {
   },
   phone: {
     type: Sequelize.STRING
+  }, 
+  accept_sms: {
+    type: Sequelize.BOOLEAN
+  }, 
+  donation_date: {
+    type: Sequelize.DATE
+  }, 
+  institution_name: {
+    type: Sequelize.STRING
   }
 }, {
   timestamps: false
@@ -40,3 +49,30 @@ Donor.sync();
 
 // Makes the Donor Model available for other files (will also create a table)
 module.exports = Donor;
+
+
+// obsolete models - use for future improvements
+
+          // // Creates a "Donation" model that matches up with DB
+          // var Donation = sequelize.define("donation", {
+          //   donation_id: {
+          //     type: Sequelize.INTEGER,
+          //     primaryKey: true,
+          //     autoIncrement: true
+          //   },
+          //   donation_date: {
+          //     type: Sequelize.DATE
+          //   },
+          //   institution_name: {
+          //     type: Sequelize.STRING
+          //   }
+          // //   need to include fk_donor_id here???
+          // }, {
+          //   timestamps: false
+          // });
+
+          // // Syncs with DB
+          // Donation.sync();
+
+          // // Makes the Donation Model available for other files (will also create a table)
+          // module.exports = Donation;
