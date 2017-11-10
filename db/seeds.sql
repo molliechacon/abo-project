@@ -1,11 +1,11 @@
 INSERT INTO donors (nick_name, email, accept_email, street_address, zip_code, blood_type, phone, accept_sms, donation_date, institution_name) 
-VALUES ('Mollie', 'mollie@somewhere.com', true, '123 March Lane', '80110', 'O+', '303.555.5555', true, '2017-10-01', 'Swedish Medical Center');
+VALUES ('Mollie', 'mollie@somewhere.com', true, '123 March Lane', '80110', 'O+', '303.555.5555', true, '2017-10-01', 'Swedish');
 
 INSERT INTO donors (nick_name, email, accept_email, street_address, zip_code, blood_type, phone, accept_sms, donation_date, institution_name) 
-VALUES ('Partha', 'partha@somewhere.com', false, '255 Elm Ct', '80121', null , '303.777.7777', true, '2017-07-06', 'St. Joseph"s Hospital');
+VALUES ('Partha', 'partha@somewhere.com', false, '255 Elm Ct', '80121', null , '303.777.7777', true, '2017-07-06', 'NationalJewish');
 
 INSERT INTO donors (nick_name, email, accept_email, street_address, zip_code, blood_type, phone, accept_sms, donation_date, institution_name) 
-VALUES ('Sam', 'sam@somewhere.com', true, '1010 Welton St', '80204', 'AB-', '303.888.8888', false, '2017-1-30', 'Porter Adventist Hospital');
+VALUES ('Sam', 'sam@somewhere.com', true, '1010 Welton St', '80204', 'AB-', '303.888.8888', false, '2017-1-30', 'Porter');
 
 
 
