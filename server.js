@@ -18,10 +18,8 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 
-// Requiring our models for syncing
-
 // Static directory
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "/app/public")));
 
 
 // Routes
@@ -34,7 +32,7 @@ app.get("/", function(req, res) {
 });
 
 
-// Syncing our sequelize models and then starting our Express app
+// Starting our Express app
 // =============================================================
 
   app.listen(PORT, function() {
