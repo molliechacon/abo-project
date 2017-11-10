@@ -6,37 +6,29 @@ var Sequelize = require("sequelize");
 // sequelize (lowercase) references my connection to the DB.
 var sequelize = require("../config/connection");
 
-// Creates a "Donor" model that matches up with DB
-var Donor = sequelize.define("donor", {
-  donor_id: {
+// Creates a "Donation" model that matches up with DB
+var Need = sequelize.define("inst_need", {
+  inst_need_id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true
   },
-  nick_name: {
-    type: Sequelize.STRING
-  },
-  email: {
-    type: Sequelize.STRING
-  },
-  street_address: {
-    type: Sequelize.STRING
-  },
-  zip_code: {
-    type: Sequelize.STRING
-  }, 
   blood_type: {
     type: Sequelize.STRING
   },
-  phone: {
+  amount: {
+    type: Sequelize.INTEGER
+  },
+  description: {
     type: Sequelize.STRING
   }
+//   need to include fk_inst_id here???
 }, {
   timestamps: false
 });
 
 // Syncs with DB
-Donor.sync();
+Need.sync();
 
-// Makes the Donor Model available for other files (will also create a table)
-module.exports = Donor;
+// Makes the Donation Model available for other files (will also create a table)
+module.exports = Need;
