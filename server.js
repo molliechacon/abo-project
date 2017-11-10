@@ -28,8 +28,10 @@ app.use(express.static("public"));
 // =============================================================
 require("./app/routes/donor-api-routes")(app);
 require("./app/routes/inst-api-routes")(app);
-// require("./app/routes/html-routes")(app);
-// DO WE NEED THIS HTML-ROUTES FILE OR IS THIS HANDLED IN THE API-ROUTES?????
+
+app.get("/", function(req, res) {
+  res.render("login");
+});
 
 
 // Syncing our sequelize models and then starting our Express app
