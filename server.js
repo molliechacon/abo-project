@@ -26,6 +26,7 @@ app.use(express.static("app/public"));
 // =============================================================
 require("./app/routes/donor-api-routes")(app);
 require("./app/routes/inst-api-routes")(app);
+// require("./app/routes/user-routes")(app);
 
 app.get("/", function(req, res) {
   res.render("login");
