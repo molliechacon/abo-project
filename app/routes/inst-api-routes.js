@@ -1,38 +1,17 @@
-// NEEDS UPDATING!!!
-
-// UI ENDPOINTS???
-    //      /donor              --> donation history
-    //      /donor/profile      --> display profile info
-    //      /inst               --> current need and received this mo
-    //      /inst/profile       --> display profile info
-
-
-// API ENDPOINTS???
-    //      /api/donors             --> GET donation history,
-    //                                  POST log a donation
-    //      /api/donors/:donor_id   --> PUT update profile info
-    //                              --> DELETE account??
-    //      /api/inst               --> GET current need
-    //                              --> PUT update current need
-    //                                  GET received this month (two gets on the same endpt??)
-    //      /api/inst/:inst_id      --> PUT update inst info
-    //                              --> DELETE account??
-
-
-    
 // Requiring our models
 var Inst = require("../models/insts");
 
 module.exports = function(app) {
-    app.get("/insts", function(req, res) {
-        // Handlebars requires an object to be sent to the handlebars file.
-        // NEED TO GRAB THE DONATION HISTORY AS AN OBJECT AND SEND TO DONOR.HBR
-        Inst.findAll({})
-            .then(function(insts) {
-                console.log('insts', insts);
-                res.render('inst', {insts: insts});
-            });
-    });
+
+    // app.get("/insts", function(req, res) {
+    //     // Handlebars requires an object to be sent to the handlebars file.
+    //     // NEED TO GRAB THE DONATION HISTORY AS AN OBJECT AND SEND TO DONOR.HBR
+    //     Inst.findAll({})
+    //         .then(function(insts) {
+    //             console.log('insts', insts);
+    //             res.render('inst', {insts: insts});
+    //         });
+    // });
 
     app.get("/insts/:name", function(req, res) {
         Inst.findOne({
@@ -43,7 +22,26 @@ module.exports = function(app) {
             res.render("inst", { inst: anInst })
         })
     });
-    
 
-    
+    app.put("/insts/:name", function(req, res) {
+        Inst.update({
+            name: req.body.name,
+            street_address: req.body.street_address,
+            zip_code: req.body.zip_code,
+            phone: req.body.phone,
+            email: req.body.email,
+            hours: req.body.hours,
+            need_blood_type: req.body.need_blood_type,
+            need_amount: req.body.need_amount,
+            need_description: req.body.need_description
+        }, {
+            where: {
+                name: req.params.name
+            }
+        }).then(function(update) {
+            // error catch??
+            res.end("");
+            console.log("Your update is complete")
+        });
+    });  
 }
