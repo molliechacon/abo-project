@@ -6,8 +6,9 @@
           <h3 class="panel-title">Activity</h3>       
         </div>
         <div class="panel-body" id="donor-recent-panel">
-          <h3>Your most recent donation was on: </h3>
-            <p id="donation-date">{{donor.donation_date}}</p>
+          <h3>Your most recent donation: </h3>
+            <p id="donation"> <span id="current-donation-location">{{donor.institution_name}}</span></p>
+            <p id="donation"> <span id="current-donation-date">{{donor.donation_date}}</span></p>
             <hr>
             <h4>Have you donned your superhero cape and given blood again since then? If so, click the link below to log a new donation!</h4>
             <br>
@@ -17,9 +18,9 @@
               <div id="myModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                   <!-- Modal content-->
-                    <div class="modal-content">
+                    <div class="modal-content" id="donation-modal">
                       <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <button type="button" class="close" id="close-donation-modal" data-dismiss="modal">&times;</button>
                           <h4 class="modal-title">Log Donation</h4>
                           <h5>Please list your most recent donation here</h5>
                       </div>
@@ -48,6 +49,14 @@
                             </div>
                           </div>
                         </div>
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <div class="text-center">
+                              {{!-- confirm log donation here --}}
+                              <p id="donation-log-confirm"></p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                 </div>
@@ -61,7 +70,7 @@
           <h3 class="panel-title">Your Profile</h3>       
         </div>
         <div class="panel-body">
-          <p><strong>User Name:</strong>       {{donor.nick_name}}</p>
+          <p><strong>User Name:</strong>       <span id="nick-name">{{donor.nick_name}}</span></p>
           <p><strong>Email:</strong>           {{donor.email}}</p>        
           <p><strong>Street Address:</strong>  {{donor.street_address}}</p>
           <p><strong>Zip Code:</strong>        {{donor.zip_code}}</p>
@@ -78,7 +87,7 @@
               <!-- Modal content-->
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="close-profile-modal" data-dismiss="modal">&times;</button>
                       <h4 class="modal-title">Update Profile</h4>
                       <h5>If any of the current information is not correct, please update here.</h5>
                   </div>
@@ -86,21 +95,21 @@
                     <div class="row">
                       <div class="col-sm-6">
                         <h3> Current</h3>
-                        <p><strong>User Name:</strong>       {{donor.nick_name}}</p>
+                        <p><strong>User Name:</strong>       <span id="current-name">{{donor.nick_name}}</span></p>
                         <br>
-                        <p><strong>Email:</strong>           {{donor.email}}</p>  
+                        <p><strong>Email:</strong>           <span id="current-email">{{donor.email}}</span></p>  
                         <br>      
-                        <p><strong>Street Address:</strong>  {{donor.street_address}}</p>
+                        <p><strong>Street Address:</strong>  <span id="current-address">{{donor.street_address}}</span></p>
                         <br>
-                        <p><strong>Zip Code:</strong>        {{donor.zip_code}}</p>
+                        <p><strong>Zip Code:</strong>        <span id="current-zip">{{donor.zip_code}}</span></p>
                         <br>
-                        <p><strong>Blood Type:</strong>      {{donor.blood_type}}</p>
+                        <p><strong>Blood Type:</strong>      <span id="current-type">{{donor.blood_type}}</span></p>
                         <br>
-                        <p><strong>Phone #:</strong>         {{donor.phone}}</p>
+                        <p><strong>Phone #:</strong>         <span id="current-phone">{{donor.phone}}</span></p>
                         <br>
-                        <p><strong>Accept Email?:</strong>   {{donor.accept_email}}</p>
+                        <p><strong>Accept Email?:</strong>   <span id="current-accept-email">{{donor.accept_email}}</span></p>
                         <br>
-                        <p><strong>Accept SMS?:</strong>     {{donor.accept_sms}}</p>
+                        <p><strong>Accept SMS?:</strong>     <span id="current-accept-sms">{{donor.accept_sms}}</span></p>
                       </div>
                       <div class="col-sm-6">
                         <h3>Update</h3>
@@ -120,24 +129,24 @@
                           <div class="form-group">
                             <input type="text" class="form-control" id="input-type" placeholder="Blood Type (not required)">
                           </div>
-                          <div class="form-group">                           
+                          <div class="form-group">              
                             <input type="phone" class="form-control" id="input-phone" placeholder="Phone">
                           </div>
                           <div class="radio">
                             <label class="radio-inline">
-                              <input type="radio" name="inlineRadioOptions1" id="accept-email-true" value="option1"> Yes
+                              <input type="radio" name="inlineRadioOptions1" id="accept-email-true" value="true"> Yes
                             </label>
                             <label class="radio-inline">
-                              <input type="radio" name="inlineRadioOptions1" id="accept-email-false" value="option2"> No
+                              <input type="radio" name="inlineRadioOptions1" id="accept-email-false" value="false"> No
                             </label>
                           </div>
                           <br>
                           <div class="radio">
                              <label class="radio-inline">
-                              <input type="radio" name="inlineRadioOptions2" id="accept-sms-true" value="option1"> Yes
+                              <input type="radio" name="inlineRadioOptions2" id="accept-sms-true" value="true"> Yes
                             </label>
                             <label class="radio-inline">
-                              <input type="radio" name="inlineRadioOptions2" id="accept-sms-false" value="option2"> No
+                              <input type="radio" name="inlineRadioOptions2" id="accept-sms-false" value="false"> No
                             </label>
                             <br>
                           </div>
@@ -148,6 +157,14 @@
                       <div class="col-sm-12">
                         <div class="text-center">
                           <button type="submit" id="submit-donor-profile" class="btn btn-default btn-block modal-submit">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="text-center">
+                          {{!-- confirm profile update here --}}
+                          <p id="donor-profile-update-confirm"></p>
                         </div>
                       </div>
                     </div>

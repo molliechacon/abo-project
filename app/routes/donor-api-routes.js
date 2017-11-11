@@ -33,15 +33,6 @@
 var Donor = require("../models/donors");
 
 module.exports = function(app) {
-    app.get("/donors", function(req, res) {
-        // Handlebars requires an object to be sent to the handlebars file.
-        // NEED TO GRAB THE DONATION HISTORY AS AN OBJECT AND SEND TO DONOR.HBR
-        Donor.findAll({})
-            .then(function(donors) {
-                console.log('donors', donors);
-                res.render('donor', {donors: donors});
-            });
-    });
 
     app.get("/donors/:nick_name", function(req, res) {
         Donor.findOne({
@@ -53,20 +44,19 @@ module.exports = function(app) {
             })
     });    
 
-        // ?????????????????????????????????????????????????????????????????????????????????????????
+
     app.put("/donors/:nick_name", function(req, res) {
         Donor.update({
             donation_date: req.body.donation_date,
             institution_name: req.body.institution_name
         }, {
             where: {
-                nick_name: req.body.nick_name
+                nick_name: req.params.nick_name
             }
         }).then(function(update) {
             // error catch??
 
-            alert("Your donation was logged!")
+            console.log("Your donation was logged!")
         });
     });
-
 }
