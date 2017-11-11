@@ -178,18 +178,25 @@
   </div>
   <div class="row">
     <div class="col-sm-4">
-      <div class="panel panel-primary">
+      <div class="panel panel-primary" id="map-search-tile">
         <div class="panel-heading">
           <h3 class="panel-title">Find a Donation Center</h3>       
         </div>
         <div class="panel-body">
-             form group to search inst's goes here
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" id="map-search-text" placeholder="Search Institution Name">
+            </div>
+          </form>
           <button type="submit" class="btn btn-primary" id="find-donation-center">Submit</button>
         </div>
       </div>
     </div>
     <div class="col-sm-8">
-          googlemap!!
+      <div class="panel panel-primary" id="google-map">
+        <div class="panel-body">
+          {{!-- MAP GOES HERE!!! --}}
+        </div>
     </div>
   </div>
 </div>

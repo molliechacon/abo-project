@@ -94,3 +94,15 @@ a:active {
     text-decoration: underline;
 }
 
+#google-map {
+    height: 500px;
+}
+
+#map-search-tile {
+    /* margin-top: 100px; */
+}
+
+#req-donations-tile {
+    height: 275px;
+}
+
