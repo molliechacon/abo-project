@@ -99,6 +99,10 @@ a:active {
 }
 
 #map-search-tile {
-    margin-top: 100px;
+    /* margin-top: 100px; */
+}
+
+#req-donations-tile {
+    height: 275px;
 }
 

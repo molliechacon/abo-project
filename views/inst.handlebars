@@ -29,11 +29,11 @@
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <h3> Current</h3>
-                                                    <p><strong>Blood Type: </strong>    {{inst.need_blood_type}}</p>
+                                                    <p><strong>Blood Type: </strong>    <span id="current-need-type">{{inst.need_blood_type}}</span></p>
                                                     <br>
-                                                    <p><strong>Amount: </strong>        {{inst.need_amount}}</p>  
+                                                    <p><strong>Amount: </strong>        <span id="current-need-amount">{{inst.need_amount}}</span></p>  
                                                     <br>      
-                                                    <p><strong>Description: </strong>   {{inst.need_description}}</p>
+                                                    <p><strong>Description: </strong>   <span id="current-need-desc">{{inst.need_description}}</span></p>
                                                     {{!-- <br>
                                                     <p><strong>Message: </strong>       {{inst.request_message}}</p> --}}
                                                 </div>
@@ -61,6 +61,14 @@
                                                     <button type="submit" class="btn btn-default btn-block modal-submit" id="submit-need-update">Submit</button>
                                                     </div>
                                                 </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="text-center">
+                                                        {{!-- confirm need update here --}}
+                                                        <p id="inst-need-update-confirm"></p>
+                                                        </div>
+                                                    </div>
+                                                    </div>
                                             </div>
                                         </div>
                                     </div>
@@ -141,6 +149,14 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="text-center">
+                                                    {{!-- confirm profile update here --}}
+                                                    <p id="inst-profile-update-confirm"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -151,11 +167,20 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-primary" id="req-donations-tile">
                         <div class="panel-heading">
                             <h3 class="panel-title">Request Donations</h3>       
                         </div>
                         <div class="panel-body">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="targeted-blood-type" placeholder="Targeted Blood Type">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="targeted-zip" placeholder="Targeted zip code">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="targeted-message" placeholder="Custom Message">
+                            </div>
                             <button type="submit" class="btn btn-primary" id="request-donations">Request</button>
                         </div>
                     </div>
