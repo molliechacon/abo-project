@@ -47,6 +47,14 @@ module.exports = function(app) {
 
     app.put("/donors/:nick_name", function(req, res) {
         Donor.update({
+            nick_name: req.body.nick_name,
+            email: req.body.email,
+            accept_email: req.body.accept_email,
+            street_address: req.body.street_address,
+            zip_code: req.body.zip_code,
+            blood_type: req.body.blood_type,
+            phone: req.body.phone,
+            accept_sms: req.body.accept_sms,
             donation_date: req.body.donation_date,
             institution_name: req.body.institution_name
         }, {
@@ -55,7 +63,7 @@ module.exports = function(app) {
             }
         }).then(function(update) {
             // error catch??
-
+            res.end(update);
             console.log("Your donation was logged!")
         });
     });
