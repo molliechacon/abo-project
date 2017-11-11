@@ -42,10 +42,12 @@ var Inst = sequelize.define("inst", {
   },
   need_description: {
     type: Sequelize.STRING
-  },
-  request_message: {
-    type: Sequelize.STRING
   }
+  
+  // ,
+  // request_message: {
+  //   type: Sequelize.STRING
+  // }
 }, {
   timestamps: false
 });
