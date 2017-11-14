@@ -1,5 +1,5 @@
 {
-  "name": "project2",
+  "name": "abo-project",
   "version": "1.0.0",
   "description": "App that connects blood donors directly to the hospitals/clinics who are in need.",
   "main": "server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pdmonge/project2.git"
+    "url": "git+https://github.com/pdmonge/abo-project.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pdmonge/project2/issues"
+    "url": "https://github.com/pdmonge/abo-project/issues"
   },
-  "homepage": "https://github.com/pdmonge/project2#readme",
+  "homepage": "https://github.com/pdmonge/abo-project#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
