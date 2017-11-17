@@ -1,10 +1,10 @@
 ### Schema
 
 -- DELETE THIS ONCE WE MOVE PAST THE TESTING PHASE!!
-DROP DATABASE IF EXISTS aboproject;
+-- DROP DATABASE IF EXISTS aboproject;
 
-CREATE DATABASE aboproject;
-USE aboproject;
+-- CREATE DATABASE aboproject;
+USE ebw4c0et5tcj1xr9;
 
 CREATE TABLE donors (
   donor_id INT NOT NULL AUTO_INCREMENT,

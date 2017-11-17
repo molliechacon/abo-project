@@ -5,7 +5,7 @@
 
 // Dependencies
 var Sequelize = require("sequelize");
-var configs = require('./config.json').development;
+var configs = require('./config.json').production;
 // Creates mySQL connection using Sequelize
 var sequelize = new Sequelize(configs.database, configs.username, configs.password, {
   host: configs.host,
