@@ -2,6 +2,7 @@
 // *********************************************************************************
 
 // Dependencies
+var path      = require('path');
 var Sequelize = require("sequelize");
 // var configs   = require('./config.json').production;
 var env       = process.env.NODE_ENV || 'development';
