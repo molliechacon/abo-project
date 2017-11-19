@@ -2,11 +2,12 @@
 // *********************************************************************************
 
 // Dependencies
+var fs        = require('fs');
 var path      = require('path');
 var Sequelize = require("sequelize");
-// var configs   = require('./config.json').production;
 var env       = process.env.NODE_ENV || 'development';
-var config    = require(__dirname + './config.json')[env];
+var config   = require('./config.json')[env];
+// var config    = require(__dirname + './config.json')[env];
 // console.log(configs);
 
 // Creates mySQL connection using Sequelize
