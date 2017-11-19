@@ -17,10 +17,8 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-
 // Static directory
 app.use(express.static("app/public"));
-
 
 // Routes
 // =============================================================
@@ -31,11 +29,9 @@ app.get("/", function(req, res) {
   res.render("login");
 });
 
-
 // Starting our Express app
 // =============================================================
 
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
-
