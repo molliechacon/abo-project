@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/molliechacon/ABOProject"
+    "url": "git+https://github.com/pdmonge/abo-project.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/molliechacon/ABOProject"
+    "url": "https://github.com/pdmonge/abo-project/issues"
   },
-  "homepage": "https://safe-reef-67992.herokuapp.com/",
+  "homepage": "https://github.com/pdmonge/abo-project#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
