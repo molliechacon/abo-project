@@ -91,8 +91,6 @@ $("#submit-inst-profile").click(function(event) {
 // });
 
 
-
-
 function instUpdate(dataObj, cb) {
     console.log(dataObj);
         $.ajax({
